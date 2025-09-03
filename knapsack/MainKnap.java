@@ -1,0 +1,42 @@
+package knapsack;
+
+import java.util.ArrayList;
+
+/* 
+ * Given a set of items, each with a weight and a value,
+ * determine which items to include in the collection so that
+ * the total weight is less than or equal to a given limit
+ * and the total value is as large as possible.
+*/
+
+public class MainKnap {
+    public static void main(String[] args) {
+        System.out.println("Teste 1 - bruteforcing");
+        MyBackpack b1 = new MyBackpack(165);
+        ArrayList<MyObj> items = new ArrayList<>();
+
+        int[] weights = {23, 31, 29, 44, 53, 38, 63, 85, 89, 82};
+        int[] values = {92, 57, 49, 68, 60, 43, 67, 84, 87, 72};
+
+        for (int i = 0; i < weights.length; i++) {
+            MyObj item = new MyObj(weights[i], values[i]);
+            items.add(item);
+        }
+
+        System.out.println(Solves.bruteforce(items, b1, 0));
+
+        System.out.println("---------------\nTeste 2 - bruteforcing");
+        MyBackpack b2 = new MyBackpack(190);
+        items.clear();
+
+        int[] weights2 = {56, 59, 80, 64, 75, 17};
+        int[] values2 = {50, 50, 64, 46, 50, 05};
+
+        for (int i = 0; i < weights2.length; i++) {
+            MyObj item = new MyObj(weights2[i], values2[i]);
+            items.add(item);
+        }
+
+        System.out.println(Solves.bruteforce(items, b2, 0));
+    }
+}
