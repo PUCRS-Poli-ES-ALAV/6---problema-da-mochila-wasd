@@ -23,9 +23,11 @@ public class MainKnap {
             items.add(item);
         }
 
-        System.out.println(Solves.bruteforce(items, b1, 0));
+        System.out.printf("%d, iteracoes = %d, instrucoes = %d\n",
+        Solves.bruteforce(items, b1, 0), Solves.iterations, Solves.instructions);
 
         System.out.println("---------------\nTeste 2 - bruteforcing");
+        Solves.resetCounters();
         MyBackpack b2 = new MyBackpack(190);
         items.clear();
 
@@ -37,6 +39,7 @@ public class MainKnap {
             items.add(item);
         }
 
-        System.out.println(Solves.bruteforce(items, b2, 0));
+        System.out.printf("%d, iteracoes = %d, instrucoes = %d\n",
+        Solves.bruteforce(items, b2, 0), Solves.iterations, Solves.instructions);
     }
 }
