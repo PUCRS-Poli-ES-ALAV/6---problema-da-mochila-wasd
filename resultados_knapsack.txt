@@ -1,0 +1,13 @@
+Teste 1 - bruteforcing
+309, iteracoes = 570, instrucoes = 6775, tempo = 2ms
+---------------
+Teste 2 - bruteforcing
+150, iteracoes = 78, instrucoes = 922, tempo = 0ms
+---------------
+
+---------------
+Teste 1 - PD
+309, iteracoes = 1837, instrucoes = 26298, tempo = 1ms
+---------------
+Teste 2 - PD
+150, iteracoes = 1344, instrucoes = 18682, tempo = 1ms

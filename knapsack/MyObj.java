@@ -24,4 +24,9 @@ public class MyObj {
     public void setValue(int value) {
         this.value = value;
     }
+
+    @Override
+    public String toString() {
+        return String.format("Weight: %d, Value: %d", this.weight, this.value);
+    }
 }

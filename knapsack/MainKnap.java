@@ -11,6 +11,7 @@ import java.util.ArrayList;
 
 public class MainKnap {
     public static void main(String[] args) {
+        long start;
         System.out.println("Teste 1 - bruteforcing");
         MyBackpack b1 = new MyBackpack(165);
         ArrayList<MyObj> items = new ArrayList<>();
@@ -24,9 +25,9 @@ public class MainKnap {
             MyObj item = new MyObj(weights[i], values[i]);
             items.add(item);
         }
-
-        System.out.printf("%d, iteracoes = %d, instrucoes = %d\n",
-        Solves.bruteforce(items, b1, 0), Solves.iterations, Solves.instructions);
+        start = System.currentTimeMillis();
+        System.out.printf("%d, iteracoes = %d, instrucoes = %d, tempo = %dms\n",
+        Solves.bruteforce(items, b1, 0), Solves.iterations, Solves.instructions, System.currentTimeMillis() - start);
 
         System.out.println("---------------\nTeste 2 - bruteforcing");
         Solves.resetCounters();
@@ -39,8 +40,9 @@ public class MainKnap {
             items.add(item);
         }
 
-        System.out.printf("%d, iteracoes = %d, instrucoes = %d\n",
-        Solves.bruteforce(items, b2, 0), Solves.iterations, Solves.instructions);
+        start = System.currentTimeMillis();
+        System.out.printf("%d, iteracoes = %d, instrucoes = %d, tempo = %dms\n",
+        Solves.bruteforce(items, b2, 0), Solves.iterations, Solves.instructions, System.currentTimeMillis() - start);
 
 
 
@@ -56,8 +58,10 @@ public class MainKnap {
             MyObj item = new MyObj(weights[i], values[i]);
             items.add(item);
         }
-        System.out.printf("%d, iteracoes = %d, instrucoes = %d\n",
-        Solves.backpackPD(weights.length, b1.getCapacity() , items), Solves.iterations, Solves.instructions);
+
+        start = System.currentTimeMillis();
+        System.out.printf("%d, iteracoes = %d, instrucoes = %d, tempo = %dms\n",
+        Solves.backpackPD(weights.length, b1.getCapacity() , items), Solves.iterations, Solves.instructions, System.currentTimeMillis() - start);
 
         System.out.println("---------------\nTeste 2 - PD");
         Solves.resetCounters();
@@ -69,8 +73,9 @@ public class MainKnap {
             items.add(item);
         }
 
-        System.out.printf("%d, iteracoes = %d, instrucoes = %d\n",
-        Solves.backpackPD(weights2.length, b2.getCapacity(), items), Solves.iterations, Solves.instructions);
+        start = System.currentTimeMillis();
+        System.out.printf("%d, iteracoes = %d, instrucoes = %d, tempo = %dms\n",
+        Solves.backpackPD(weights2.length, b2.getCapacity(), items), Solves.iterations, Solves.instructions, System.currentTimeMillis() - start);
     }
     
 }

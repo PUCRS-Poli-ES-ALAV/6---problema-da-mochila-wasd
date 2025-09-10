@@ -1,0 +1,14 @@
+fibo_rec(4): 3, iteracoes = 9, instrucoes = 46, tempo = 2ms
+fibo_rec(8): 21, iteracoes = 76, instrucoes = 411, tempo = 0ms
+fibo_rec(16): 987, iteracoes = 3269, instrucoes = 17969, tempo = 0ms
+fibo_rec(32): 2178309, iteracoes = 7052424, instrucoes = 38788318, tempo = 47ms
+
+fibo(4): 3, iteracoes = 3, instrucoes = 30, tempo = 0ms
+fibo(8): 21, iteracoes = 10, instrucoes = 92, tempo = 0ms
+fibo(16): 987, iteracoes = 25, instrucoes = 218, tempo = 0ms
+fibo(32): 2178309, iteracoes = 56, instrucoes = 472, tempo = 0ms
+
+memoized_fibo(4): 3, iteracoes = 12, instrucoes = 64, tempo = 0ms
+memoized_fibo(8): 21, iteracoes = 36, instrucoes = 192, tempo = 0ms
+memoized_fibo(16): 987, iteracoes = 84, instrucoes = 448, tempo = 1ms
+memoized_fibo(32): 2178309, iteracoes = 180, instrucoes = 960, tempo = 0ms

@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Solves {
     public static int iterations = 0;
     public static int instructions = 0;
+
     public static void resetCounters() {
         iterations = 0;
         instructions = 0;
@@ -12,28 +13,37 @@ public class Solves {
 
     public static int fibo_rec(int n) {
         iterations++;
+
         instructions++;
         if (n <= 1) {
             instructions++;
             return n;
         }
+
         int a = fibo_rec(n-1);
+        instructions += 3;
         int b = fibo_rec(n-2);
-        instructions += 2;
+        instructions += 3;
+
         instructions += 2;
         return a+b;
     }
 
     public static int fibo(int n) {
         ArrayList<Integer> al = new ArrayList<>();
+        instructions++;
+
         al.add(0);
+        instructions++;
         al.add(1);
-        instructions += 2;
+        instructions++;
+
         instructions++;
         for (int i = 2; i <= n; i++) {
+            instructions += 2;
             iterations++;
             al.add(al.get(i-1) + al.get(i-2));
-            instructions += 5;
+            instructions += 6;
         }
 
         instructions += 2;
@@ -41,7 +51,10 @@ public class Solves {
     }
 
     public static int memoized_fibo (ArrayList<Integer> al, int n) {
+        instructions ++;
         for (int i = 0; i <= n; i++) {
+            iterations++;
+            instructions += 2;
             al.add(-1);
             instructions++;
         }
@@ -60,7 +73,7 @@ public class Solves {
 
         instructions++;
         if (n <= 1) {
-            instructions += 2;
+            instructions ++;
             al.set(n, n);
         }
         else {

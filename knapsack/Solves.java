@@ -22,7 +22,7 @@ public class Solves {
         instructions += 3;
         MyObj current = items.get(index);
 
-        instructions += 4;
+        instructions += 3;
         int maxValue = bruteforce(items, backpack, index + 1);
 
         instructions += 3;
@@ -47,21 +47,26 @@ public class Solves {
     public static int backpackPD (int n, int c, ArrayList<MyObj> itens) {
         // n = numero de itens
         // c = capacidade da mochila
+        instructions+=3;
         int[][] maxTab = new int[n+1][c+1];
         instructions++;
         for (int i = 0; i < n+1; i++) {
+            instructions += 3;
             iterations++;
             maxTab[i][0] = 0;
             instructions++;
         }
+
+        instructions++;
         for (int j = 0; j < c+1; j++) {
             iterations++;
+            instructions += 3;
             maxTab[0][j] = 0;
             instructions++;
         }
 
         instructions++;
-        for (int i  = 1; i <= n; i++) {
+        for (int i = 1; i <= n; i++) {
             instructions += 2;
             iterations++;
 
@@ -79,12 +84,12 @@ public class Solves {
                     instructions += 13;
                 } else {
                     maxTab[i][j] = maxTab[i-1][j];
-                    instructions += 3;
+                    instructions += 2;
                 }
             }
         }
         
-        instructions += 2;
+        instructions ++;
         return maxTab[n][c];
     }
 }
