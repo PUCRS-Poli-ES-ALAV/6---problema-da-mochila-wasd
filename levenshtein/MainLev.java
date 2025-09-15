@@ -2,6 +2,7 @@ package levenshtein;
 
 public class MainLev {
     public static void main(String[] args) {
+        System.out.println();
         String from1 = "Casablanca";
         String to1   = "Portentoso";
 
@@ -47,5 +48,14 @@ public class MainLev {
         System.out.println("-------- distEdProgDina 1 --------");
         System.out.printf("distance = %d, iterations = %d, instructions = %d, time = %dms\n",
                           distance3, Solves.iterations, Solves.instructions, end - start);
+
+        Solves.resetCounters();
+
+        start = System.currentTimeMillis();
+        int distance4 = Solves.distEdProgDina(from2, to2);
+        end = System.currentTimeMillis();
+        System.out.println("-------- distEdProgDina 2 --------");
+        System.out.printf("distance = %d, iterations = %d, instructions = %d, time = %dms\n",
+                          distance4, Solves.iterations, Solves.instructions, end - start);
     }
 }

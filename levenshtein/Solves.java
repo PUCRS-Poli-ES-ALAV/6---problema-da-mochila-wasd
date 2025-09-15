@@ -60,29 +60,65 @@ public class Solves {
     public static int distEdProgDina(String from, String to) {
         int m = from.length();
         int n = to.length();
+        instructions += 4;
 
         int[][] table = new int[m + 1][n + 1];
-        table[0][0] = 0;
+        instructions += 4;
 
-        for (int i = 1; i < m; i++) table[i][0] = table[i - 1][0] + 1;
-        for (int j = 1; j < n; j++) table[0][j] = table[0][j - 1] + 1;
+        instructions ++;
+        for (int i = 0; i < m; i++) {
+            iterations++;
+            table[i][0] = 0;
+            instructions += 3;
+        }
+
+        instructions ++;
+        for (int j = 0; j < n; j++) {
+            iterations++;
+            table[0][j] = 0;
+            instructions += 3;
+        }
+
+        instructions ++;
+        for (int i = 1; i <= m; i++) {
+            iterations++;
+            table[i][0] = table[i - 1][0] + 1;
+            instructions += 5;
+        }
+
+        instructions ++;
+        for (int j = 1; j <= n; j++) {
+            iterations++;
+            table[0][j] = table[0][j - 1] + 1;
+            instructions += 5;
+        }
 
         int extraCost;
 
-        for (int i = 1; i < m; i++) {
-            for (int j = 1; j < n; j++) {
-                if (from.charAt(i) == to.charAt(j)) {
+        instructions ++;
+        for (int i = 1; i <= m; i++) {
+            iterations++;
+            instructions ++;
+            for (int j = 1; j <= n; j++) {
+                iterations++;
+                instructions += 2;
+                if (from.charAt(i - 1) == to.charAt(j - 1)) {
+                    instructions += 6;
                     extraCost = 0; // match
                 } else {
+                    instructions += 7;
                     extraCost = 1; // substitution
                 }
 
+                instructions += 9;
                 table[i][j] = Math.min(table[i-1][j] + 1,
                                    Math.min(table[i][j-1] + 1,
                                             table[i-1][j-1] + extraCost));
             }
         }
 
-        return table[m-1][n-1];
+        instructions ++;
+        return table[m][n];
     }
+
 }

@@ -1,0 +1,8 @@
+-------- bruteforce 1 --------
+distance = 10, iterations = 10078077, instructions = 131964644, time = 148ms
+-------- bruteforce 2 --------
+nem termina kkkkkkkkk
+-------- distEdProgDina 1 --------
+distance = 10, iterations = 150, instructions = 1982, time = 0ms
+-------- distEdProgDina 2 --------
+distance = 557, iterations = 230394, instructions = 4091173, time = 46ms
